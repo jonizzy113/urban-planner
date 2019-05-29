@@ -37,6 +37,23 @@ namespace planner
             List<Building> buildingList = new List<Building>() {
                 FiveOneTwoEigth, one, two
             };
+            City megalopolis = new City("Megalopolis");
+            megalopolis.mayor= "Joanthan";
+            megalopolis.yearMade = 1992; 
+
+        foreach(Building building in buildingList){
+            megalopolis.AddBuilding(building);
+        }
+
+            List<City> listOfCities = new List<City>(){
+                megalopolis
+            };
+
+            foreach(City city in listOfCities){
+                Console.WriteLine(city.CityName);
+                Console.WriteLine($"Established in {city.yearMade}");
+                Console.WriteLine($"Mayor name: {city.mayor}");
+                Console.WriteLine($"- - - List of Buildings in {city.CityName} - - -");
 
             foreach(Building building in buildingList){
                 Console.WriteLine(building.GetAddress());
@@ -46,7 +63,7 @@ namespace planner
                 Console.WriteLine($"Owned By {building.GetOwner()}");
                 Console.WriteLine($"{building.Volume} cubic meters of space");
                 Console.WriteLine(" ");
-
+            }
         }
         }
     }
